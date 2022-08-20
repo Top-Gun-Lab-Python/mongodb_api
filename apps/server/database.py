@@ -2,7 +2,7 @@ import motor.motor_asyncio
 from bson.objectid import ObjectId
 from decouple import config
 
-MONGO_DETAILS = "mongodb://localhost:27017"
+MONGO_DETAILS = "mongodb://top_gun_lab:Topgunlab321@cluster0-shard-00-00.0o62b.mongodb.net:27017,cluster0-shard-00-01.0o62b.mongodb.net:27017,cluster0-shard-00-02.0o62b.mongodb.net:27017/?ssl=true&replicaSet=atlas-cxhbd1-shard-0&authSource=admin&retryWrites=true&w=majority"
 
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
 

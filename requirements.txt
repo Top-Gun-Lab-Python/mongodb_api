@@ -2,4 +2,5 @@ fastapi
 motor
 pydantic[email]
 python-decouple
+dnspython
 uvicorn

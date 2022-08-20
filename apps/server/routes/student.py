@@ -1,5 +1,4 @@
 from fastapi import APIRouter, Body
-from fastapi.encoders import jsonable_encoder
 
 from apps.server.database import (
     add_student,
@@ -34,10 +33,9 @@ async def get_students():
 # post => "/students/"
 @router.post("/", response_description="Student data added into the database")
 async def add_students(student: StudentSchema = Body(...)):
-    student = jsonable_encoder(student)
     
     try:
-        new_student = await add_student(student)
+        new_student = await add_student(student.json())
         return ResponseModel(new_student, "Student added successfully")
     except Exception:
         return ErrorResponseModel(Exception, 500, "Student was not added")
